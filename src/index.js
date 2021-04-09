@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
 import App from './App';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
+import 'swiper/swiper-bundle.css';
+import './style.css';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+    type: 'dark'
+  },
+  typography: {
+    fontFamily: "'Open Sans', sans-serif"
+  }
+})
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
