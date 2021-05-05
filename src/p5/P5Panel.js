@@ -26,15 +26,22 @@ function P5Panel() {
     }, [isLoopOn]);
 
     return <Grid container justify="center" alignItems="center" className={classes.grid}>
+        <Grid item xs={12} container justify="center" alignItems="center" spacing="3" >
+            <Grid item>
+                <Typography color="textPrimary" variant="h4">
+                    Perlin Noise - Circle
+            </Typography>
+            </Grid>
+            <Grid item>
+                <Button onClick={() => setLoopOn(!isLoopOn)} variant="contained" color="primary">
+                    {isLoopOn ? "Stop Animation" : "Start Animation"}
+                </Button>
+            </Grid>
+        </Grid>
 
-        <Typography color="textPrimary" variant="h4" gutterBottom>
-            Perlin Noise - Circle
-        </Typography>
-
-        <Grid item xs={12} container justify="center">
+        <Grid item xs={12} container justify="center"   >
             <div ref={p5Ref} />
         </Grid>
-        <Button onClick={() => setLoopOn(!isLoopOn)} variant="contained" color="primary">Toggle Loop</Button>
     </Grid>
 
 }

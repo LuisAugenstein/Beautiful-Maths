@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     //width: "100vw",
     //height: "100vh",
     backgroundColor: theme.palette.background.default
-  }
+  },
 }))
 
 SwiperCore.use([Navigation, Pagination]);
