@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container, makeStyles } from '@material-ui/core'
-import P5Panel from './p5/P5Panel'
+import PerlinNoiseCircle from './p5/PerlinNoiseCircle'
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react'
+import FractalTrees from './p5/FractalTrees';
 
 
 const useStyles = makeStyles(theme => ({
@@ -24,7 +25,8 @@ function App() {
           navigation
           pagination={{ clickable: true }}
         >
-          <SwiperSlide><P5Panel /></SwiperSlide>
+          <SwiperSlide><PerlinNoiseCircle /></SwiperSlide>
+          <SwiperSlide><FractalTrees /></SwiperSlide>
         </Swiper>
 
       </Container>

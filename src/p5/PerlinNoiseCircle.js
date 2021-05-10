@@ -1,3 +1,5 @@
+import React from 'react'
+import P5Panel from './P5Panel'
 
 const sketch = p => {
     const width = 800
@@ -20,4 +22,10 @@ const sketch = p => {
     }
 }
 
-export default sketch
+function PerlinNoiseCircle() {
+    return <P5Panel title="Perlin Noise Circle"
+        sketch={sketch}
+    />
+}
+
+export default PerlinNoiseCircle

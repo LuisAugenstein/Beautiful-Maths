@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import p5 from 'p5'
-import sketch from './Sketch'
 import { Button, Grid, makeStyles, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -9,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-function P5Panel() {
+function P5Panel({ title, sketch }) {
     const [isLoopOn, setLoopOn] = useState(false)
     const canvas = useRef(null)
     const p5Ref = useRef(null)
@@ -23,14 +22,14 @@ function P5Panel() {
         if (isLoopOn) {
             canvas.current._draw()
         }
-    }, [isLoopOn]);
+    }, [isLoopOn, sketch]);
 
     return <Grid container justify="center" alignItems="center" className={classes.grid}>
         <Grid item xs={12} container justify="center" alignItems="center" spacing="3" >
             <Grid item>
                 <Typography color="textPrimary" variant="h4">
-                    Perlin Noise - Circle
-            </Typography>
+                    {title}
+                </Typography>
             </Grid>
             <Grid item>
                 <Button onClick={() => setLoopOn(!isLoopOn)} variant="contained" color="primary">
